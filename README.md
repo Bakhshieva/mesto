@@ -15,3 +15,6 @@
 Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
 
 Удачи!
+
+
+https://bakhshieva.github.io/mesto/index.html
