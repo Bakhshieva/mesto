@@ -26,6 +26,7 @@ const popupPhotos = document.querySelector('.popup_photos');
 const popupPhotosImage = popupPhotos.querySelector('.popup__image');
 const popupPhotosDescription = popupPhotos.querySelector('.popup__description');
 
+
 function openPopup(popupElement) {
   popupElement.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscapeClick);
@@ -35,6 +36,7 @@ function closePopup(popupElement) {
   popupElement.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupEscapeClick);
 }
+
 
 function openPopupEdit() {
   inputName.value = profileName.textContent;
@@ -49,15 +51,19 @@ function handleSubmitProfile(evt) {
   closePopup(popupEdit);
 }
 
+
 function generateCard(card) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   const cardsElementImage = cardElement.querySelector('.element__image');
+
   cardsElementImage.src = card.link;
   cardsElementImage.alt = card.name;
   cardElement.querySelector('.element__caption').textContent = card.name;
+
   cardsElementImage.addEventListener('click', openPopupPhotos);
   cardElement.querySelector('.element__btn-like').addEventListener('click', handleLikeButtonClick);
   cardElement.querySelector('.element__btn-trash').addEventListener('click', handleRemoveButtonClick);
+
   return cardElement;
 }
 
@@ -74,6 +80,8 @@ function handleSubmitCard(evt) {
 }
 
 function openPopupPhotos(evt) {
+  popupPhotosImage.src = evt.target.src;
+  popupPhotosImage.alt = evt.target.alt;
   popupPhotosDescription.textContent = evt.target.alt;
   openPopup(popupPhotos);
 }
@@ -81,6 +89,7 @@ function openPopupPhotos(evt) {
 initialCards.forEach (card => {
   cardsElement.append( generateCard(card) );
 });
+
 
 function handleLikeButtonClick(evt) {
   evt.target.classList.toggle('element__btn-like_active');
@@ -90,12 +99,14 @@ function handleRemoveButtonClick(evt) {
   evt.target.closest('.element').remove();
 }
 
+
 function closePopupEscapeClick(evt) {
   if (evt.key === 'Escape') {
     const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }
 }
+
 
 popups.forEach((element) => {
   element.addEventListener('mousedown', function (evt) {
@@ -107,6 +118,7 @@ popups.forEach((element) => {
     }
   });
 })
+
 
 profileEditButton.addEventListener('click', openPopupEdit);
 popupEditForm.addEventListener('submit', handleSubmitProfile);
