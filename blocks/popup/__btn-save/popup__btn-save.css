@@ -22,4 +22,5 @@
 .popup__btn-save:hover {
   opacity: 0.8;
   cursor: pointer;
+  pointer-events: none;
 }
