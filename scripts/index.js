@@ -1,6 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
-import { initialCards, classData } from './initialData.js';
+import { initialCards, classData } from './initialCards.js';
 
 const profile = document.querySelector('.profile');
 const profileName = profile.querySelector('.profile__name');
