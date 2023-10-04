@@ -20,4 +20,4 @@ JavaScript
 
 ## Ссылка на проект
 
-https://bakhshieva.github.io/mesto/
+https://drooid713.github.io/mesto/
