@@ -1,6 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
-import { initialCards, classData } from './initialCards.js';
+import { initialCards, classData } from './initialData.js';
 
 const profile = document.querySelector('.profile');
 const profileName = profile.querySelector('.profile__name');
@@ -74,6 +74,13 @@ function handleSubmitCard(evt) {
   cardsElement.prepend(createCard(cardElement));
   closePopup(popupAdd);
   popupAddFormValidator.toggleButtonState();
+}
+
+export function openPopupPhotos(imageLink, imageName) {
+  popupPhotosImage.src = imageLink;
+  popupPhotosImage.alt = imageName;
+  popupPhotosDescription.textContent = imageName;
+  openPopup(popupPhotos);
 }
 
 initialCards.forEach (card => {
