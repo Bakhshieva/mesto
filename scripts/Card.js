@@ -41,12 +41,11 @@ export default class Card {
 
     return this._cardElement;
   };
-  
-  openPopupPhotos(imageLink, imageName) {
-  popupPhotosImage.src = imageLink;
-  popupPhotosImage.alt = imageName;
-  popupPhotosDescription.textContent = imageName;
-  openPopup(popupPhotos);
+
+    openPopupPhotos(imageLink, imageName) {
+    popupPhotosImage.src = imageLink;
+    popupPhotosImage.alt = imageName;
+    popupPhotosDescription.textContent = imageName;
+    openPopup(popupPhotos);
   };
 }
-
