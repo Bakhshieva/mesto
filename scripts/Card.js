@@ -1,5 +1,3 @@
-import { openPopupPhotos } from './index.js';
-
 export default class Card {
   constructor(data, cardTemplate) {
     this._imageLink = data.link;
