@@ -1,5 +1,3 @@
-import { openPopupPhotos } from './index.js';
-
 export default class Card {
   constructor(data, cardTemplate) {
     this._imageLink = data.link;
@@ -43,4 +41,11 @@ export default class Card {
 
     return this._cardElement;
   }
+}
+
+function openPopupPhotos(imageLink, imageName) {
+  popupPhotosImage.src = imageLink;
+  popupPhotosImage.alt = imageName;
+  popupPhotosDescription.textContent = imageName;
+  openPopup(popupPhotos);
 }

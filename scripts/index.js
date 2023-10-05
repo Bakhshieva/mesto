@@ -76,13 +76,6 @@ function handleSubmitCard(evt) {
   popupAddFormValidator.toggleButtonState();
 }
 
-export function openPopupPhotos(imageLink, imageName) {
-  popupPhotosImage.src = imageLink;
-  popupPhotosImage.alt = imageName;
-  popupPhotosDescription.textContent = imageName;
-  openPopup(popupPhotos);
-}
-
 initialCards.forEach (card => {
   cardsElement.append(createCard(card));
 });
