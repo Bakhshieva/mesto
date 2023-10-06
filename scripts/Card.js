@@ -1,3 +1,5 @@
+import openPopupPhotos from "../utils/utils.js";
+
 export default class Card {
   constructor(data, cardTemplate) {
     this._imageLink = data.link;
@@ -40,12 +42,5 @@ export default class Card {
     this._cardElement.querySelector('.element__caption').textContent = this._name;
 
     return this._cardElement;
-  };
-
-    openPopupPhotos(imageLink, imageName) {
-    popupPhotosImage.src = imageLink;
-    popupPhotosImage.alt = imageName;
-    popupPhotosDescription.textContent = imageName;
-    openPopup(popupPhotos);
   };
 }
